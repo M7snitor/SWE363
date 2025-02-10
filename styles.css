@@ -115,15 +115,25 @@ header {
     background-color: var(--base-color);
     z-index: 1000;
     box-shadow: 0px 0px 5px var(--shadow-color); 
-
     width: 100vw; 
-    margin: 0; 
+    /* margin: 0;  */
+    min-height: 10vh;
     padding: 10px 0; 
 }
+
+
+
+
 html {
     scroll-padding-top: 130px;
     scroll-behavior: smooth;
   }
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
 nav ul {
     list-style: none; 
     padding: 0;
@@ -142,6 +152,8 @@ nav ul li a {
     color:  var(--text-color);
     font-weight: bold;
     padding: 10px 10px;
+    font-size: 1rem; 
+    transition: font-size 0.3s ease; 
 }
 nav ul li a:hover {
     text-decoration: none;
@@ -244,3 +256,42 @@ section, header, footer, .container, .floating-box {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+
+
+@media (max-height: 600px) { 
+    nav {
+        flex-direction: column;
+        margin-top: 30px; /* Pushes nav further down */
+    }
+        nav ul {
+        gap: 10px; /* Adds space between links */
+    }
+    nav ul li a {
+        font-size: 1.3rem; /* Slightly bigger text */
+    }
+    header {
+        min-height: 15vh;
+        padding: 25px 0;
+    }
+}
+@media (max-height: 400px) {
+    header {
+        min-height: 20vh; /* Makes header even taller */
+        padding: 30px 0;
+    }
+    nav {
+        margin-top: 50px; /* Pushes nav even more */
+    }
+    nav ul li a {
+        font-size: 1.8rem; /* Bigger text */
+    }
+}
+@media (orientation: portrait) and (max-device-width: 600px) {
+    nav {
+        margin-top: 50px; /* Moves navigation lower */
+    }
+
+    nav ul li a {
+        font-size: 1.5rem; /* Increase text size */
+    }
+}
