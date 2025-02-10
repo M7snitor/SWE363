@@ -142,14 +142,10 @@ nav ul li a {
     color:  var(--text-color);
     font-weight: bold;
     padding: 10px 10px;
-    transition: color 0.5s ease;
 }
 nav ul li a:hover {
     text-decoration: none;
     color: var(--primary-color);
-}
-li {
-    transition: color 0.5s ease;
 }
 
 
@@ -200,20 +196,17 @@ body {
 h1, h2, h3 {
     font-family: 'Verdana', sans-serif;
     color: var(--text-color);
-    transition: color 0.5s ease;
 }
 
 p {
     font-size: 16px;
     line-height: 1.5;
     color: var(--secondary-text);
-    transition: color 0.5s ease;
 }
 
 a {
     color: var(--primary-color);
     text-decoration: none;
-    transition: color 0.5s ease;
 }
 
 a:hover {
@@ -235,5 +228,19 @@ a:hover {
     padding: 5px;
 }
 
+/* TO MAKE SURE DARKMODE SMOOTH TRANSITION */
 
+body, li, p, a, button {
+    font-weight: normal;
+}
+
+body, h1, h2, h3, p, a, button {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+section, header, footer, .container, .floating-box {
+    transition: background-color 0.3s ease;
+}
+.darkmode {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 

@@ -1,20 +1,21 @@
 let darkmode = localStorage.getItem('darkmode')
 const themeSwitch = document.getElementById('theme-switch')
 
-const rizzSound = new Audio('rizz.mp3');
-const acksSound = new Audio('ack.mp3');
-acksSound.volume = 0.5;
+const darkSound = new Audio('undertaker.mp3');
+const lightSound = new Audio('rizz.mp3');
+// const acksSound = new Audio('ack.mp3');
+// acksSound.volume = 0.5;
 
 const enableDarkmode = () => {
     document.body.classList.add('darkmode')
     localStorage.setItem('darkmode', 'active')
-    rizzSound.play();
+    darkSound.play();
 }
 
 const disableDarkmode = () => {
     document.body.classList.remove('darkmode')
     localStorage.setItem('darkmode', null)
-    acksSound.play();
+    lightSound.play();
 }
 
 if (darkmode === "active") enableDarkmode()
