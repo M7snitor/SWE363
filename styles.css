@@ -1,12 +1,12 @@
 :root {
     --base-color: rgb(255, 255, 255);
     --base-variant: rgb(183, 202, 210);
-    --text-color: #1d314e;
+    --text-color: #033a8d;
     --secondary-text: #000000;
     --primary-color: rgb(0, 183, 255);
-    --accent-color: #1d314e;
+    --accent-color: #033a8d;
     --shadow-color: rgba(98, 98, 98, 0.5);
-    --glow-color: #ffffff;
+    --glow-color: rgba(98, 98, 98, 0.5);
 }
 .darkmode{
     --base-color: rgb(31, 31, 31);
@@ -16,7 +16,7 @@
     --primary-color: rgb(0, 183, 255);
     --accent-color: rgb(0, 142, 198);
     --shadow-color: rgba(98, 98, 98, 0.5);
-    --glow-color: #000000;
+    --glow-color: rgba(98, 98, 98, 0.5);
 }
 #theme-switch {
     position: absolute;
@@ -37,13 +37,22 @@
 
 .logo {
     position: absolute;
-    top: 20px;
+    top: 10px;
     left: 20px;
     width: 200px;
     height: auto;
     pointer-events: none;
     border: none !important; 
-
+    z-index: -1;
+}
+.logo-dark {
+    display: none;
+}
+.darkmode .logo-light {
+    display: none;
+}
+.darkmode .logo-dark {
+    display: block;
 }
 
 table {
@@ -100,14 +109,16 @@ button:hover {
 
 
 header {
-    position: sticky;
+    position: fixed;
     text-align: center;
     top: 0;
     background-color: var(--base-color);
     z-index: 1000;
     box-shadow: 0px 0px 5px var(--shadow-color); 
-    padding: 10px;
-    width: 100%;
+
+    width: 100vw; 
+    margin: 0; 
+    padding: 10px 0; 
 }
 html {
     scroll-padding-top: 130px;
@@ -136,6 +147,9 @@ nav ul li a {
 nav ul li a:hover {
     text-decoration: none;
     color: var(--primary-color);
+}
+li {
+    transition: color 0.5s ease;
 }
 
 
@@ -166,6 +180,7 @@ body {
     padding: 20px;
     font-family: Arial, sans-serif;
     color: var(--secondary-text);
+    
 }
 
 .container {
@@ -185,17 +200,20 @@ body {
 h1, h2, h3 {
     font-family: 'Verdana', sans-serif;
     color: var(--text-color);
+    transition: color 0.5s ease;
 }
 
 p {
     font-size: 16px;
     line-height: 1.5;
     color: var(--secondary-text);
+    transition: color 0.5s ease;
 }
 
 a {
     color: var(--primary-color);
     text-decoration: none;
+    transition: color 0.5s ease;
 }
 
 a:hover {
@@ -217,8 +235,5 @@ a:hover {
     padding: 5px;
 }
 
-#find_me {
-    position: absolute;
-    top: 1000px;
-    left: 200px;
-}
+
+

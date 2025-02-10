@@ -2,7 +2,6 @@ let darkmode = localStorage.getItem('darkmode')
 const themeSwitch = document.getElementById('theme-switch')
 
 const rizzSound = new Audio('rizz.mp3');
-
 const acksSound = new Audio('ack.mp3');
 acksSound.volume = 0.5;
 
@@ -10,7 +9,6 @@ const enableDarkmode = () => {
     document.body.classList.add('darkmode')
     localStorage.setItem('darkmode', 'active')
     rizzSound.play();
-
 }
 
 const disableDarkmode = () => {
